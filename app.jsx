@@ -40,6 +40,7 @@ function App() {
       <Nav theme={theme} setTheme={setTheme} />
       <Hero />
       <Skills />
+      <AIWorkflow />
       <Services />
       <Experience />
       <Projects />

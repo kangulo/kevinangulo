@@ -17,10 +17,10 @@ function Nav({ theme, setTheme }) {
         </a>
         <div className="nav-links">
           <a href="#skills" className="nav-link-hide">Skills</a>
+          <a href="#ai-workflow" className="nav-link-hide">AI Workflow</a>
           <a href="#services" className="nav-link-hide">Services</a>
           <a href="#experience" className="nav-link-hide">Experience</a>
           <a href="#rates" className="nav-link-hide">Rates</a>
-          <a href="#faq" className="nav-link-hide">FAQ</a>
           <button className="theme-toggle" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label="Toggle theme">
             {theme === "dark" ? <Icon.Sun /> : <Icon.Moon />}
           </button>
@@ -39,18 +39,18 @@ function Hero() {
         <div className="reveal">
           <div className="hero-status">
             <span className="status-dot"></span>
-            Available for contract work · Starting May 2026
+            Available · AI-augmented full-stack · Starting May 2026
           </div>
           <div className="hero-years">
             <span className="years-num"><CountUp target={25} /></span>
             <span className="years-plus">+</span>
-            <span className="years-label">Years shipping<br/>production code</span>
+            <span className="years-label">Years of engineering,<br/>amplified by AI</span>
           </div>
           <h1 className="hero-title">
-            I'm Kevin — a <span className="accent">senior full-stack developer</span> who's been building web & desktop apps since the late 1990s.
+            I'm Kevin — a <span className="accent">senior full-stack developer</span> who pairs 25 years of hard-won engineering judgment with modern AI tooling to ship faster, cleaner, and smarter.
           </h1>
           <p className="hero-desc">
-            PHP, JavaScript, Python, React, Vue, Laravel, SQL — and a lot of things that came before them. I lead a team at a Boston agency by day, and I take on select contract work for founders, agencies, and enterprises who need a senior hand they can trust.
+            Claude Code, Cursor, and Copilot in the driver's seat — with me at the wheel. I build production web apps, LLM-powered features, and AI-native products for founders, agencies, and enterprises who want senior quality at AI-era speed.
           </p>
           <div className="hero-ctas">
             <a href="#contact" className="btn btn-primary">Start a project <Icon.Arrow /></a>
@@ -118,7 +118,7 @@ function IdCard() {
 }
 
 function Marquee() {
-  const words = ["PHP", "Python", "React", "Vue", "Laravel", "Node", "TypeScript", "PostgreSQL", "MongoDB", "Ionic", "WordPress", "AWS"];
+  const words = ["Claude Code", "Cursor", "GitHub Copilot", "OpenAI", "Anthropic", "RAG", "React", "Vue", "PHP", "Laravel", "Python", "PostgreSQL", "pgvector", "Vercel AI SDK"];
   const row = [...words, ...words];
   return (
     <div className="marquee-wrap">
@@ -134,12 +134,12 @@ function Skills() {
     <section className="section container" id="skills">
       <div className="reveal">
         <div className="section-eyebrow">01 // Capabilities</div>
-        <h2 className="section-title">A stack deep enough to ship anything on the web.</h2>
-        <p className="section-sub">25 years means I've worked with most things, loved some, and learned what holds up. Here's where I'm strongest today.</p>
+        <h2 className="section-title">An AI-era stack, built on 25 years of fundamentals.</h2>
+        <p className="section-sub">LLMs accelerate me; they don't replace the judgment that comes from a quarter-century of shipping. Here's where I'm strongest today — with AI at the top of the list on purpose.</p>
       </div>
       <div className="skills-grid">
         {window.SITE_DATA.skills.map((s, i) => (
-          <div className="skill-card reveal" key={i} style={{ transitionDelay: `${i * 60}ms` }}>
+          <div className={`skill-card reveal ${i === 0 ? "featured-ai" : ""}`} key={i} style={{ transitionDelay: `${i * 60}ms` }}>
             <div className="skill-icon">{s.icon}</div>
             <div className="skill-title">{s.title}</div>
             <div className="skill-years">{s.years}</div>
@@ -227,4 +227,25 @@ function Projects() {
   );
 }
 
-Object.assign(window, { Nav, Hero, Skills, Services, Experience, Projects });
+function AIWorkflow() {
+  return (
+    <section className="section container" id="ai-workflow">
+      <div className="reveal">
+        <div className="section-eyebrow">★ // How I actually work with AI</div>
+        <h2 className="section-title">AI pair programming, with 25 years of taste.</h2>
+        <p className="section-sub">The difference between a senior engineer using AI and a junior pasting its output is everything. Here's what that looks like day-to-day.</p>
+      </div>
+      <div className="aiw-grid">
+        {window.SITE_DATA.aiWorkflow.map((w, i) => (
+          <div className="aiw-card reveal" key={i} style={{ transitionDelay: `${i * 70}ms` }}>
+            <div className="aiw-num">{w.num}</div>
+            <div className="aiw-title">{w.title}</div>
+            <p className="aiw-desc">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { Nav, Hero, Skills, Services, Experience, Projects, AIWorkflow });
