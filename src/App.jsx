@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import profile_pic from "./assets/kev-profile.jpg"
+import fintechImg from "./assets/projects/fintech-index.jpg";
+import safeharborImg from "./assets/projects/safeharbor.jpg";
+import amigoImg from "./assets/projects/amigo.jpg";
+import compsurveyImg from "./assets/projects/compsurvey.jpg";
+import wagerImage  from "./assets/projects/wager.jpg";
+import leeandlowImage  from "./assets/projects/leeandlow.png";
 
 export default function KevinAnguloResume() {
   const skills = {
@@ -17,12 +23,14 @@ export default function KevinAnguloResume() {
       description:
         "Architected and deployed a real-time market monitoring ecosystem using AWS, Django APIs, React, WordPress, and subscription-based SaaS workflows.",
       tech: "React • Django • AWS • WordPress • WooCommerce • Python",
+      image: wagerImage,
     },
     {
-      title: "AI-assistant for a Book Searching Platform",
+      title: "AI-Assistant for a Book Searching Platform",
       description:
         "Created AI-powered conversational recommendation experiences integrated with Zoho CRM synchronization and advanced product discovery.",
       tech: "AI Integrations • WordPress • Zoho CRM • Custom APIs",
+      image: leeandlowImage,
     },
     {
       title: "F Prime Capital Fintech Index",
@@ -30,6 +38,7 @@ export default function KevinAnguloResume() {
         "Built advanced fintech analytics dashboards integrating GitHub APIs, CSV data pipelines, regression calculations, and interactive D3.js visualizations.",
       tech: "React • D3.js • GitHub API • JavaScript • WordPress",
       link: "https://fintechindex.fprimecapital.com/",
+      image: fintechImg,
     },
     {
       title: "Insurance Broker Portal & Benefits Platform",
@@ -37,6 +46,7 @@ export default function KevinAnguloResume() {
         "Developed enterprise payroll and benefits analysis tools with dynamic calculations, PDF generation, and hybrid SPA architecture.",
       tech: "React • REST APIs • WordPress • jQuery",
       link: "https://www.safeharborsavings.com/",
+      image: safeharborImg,
     },    
     {
       title: "Amigo Social Recommendation Platform",
@@ -44,6 +54,7 @@ export default function KevinAnguloResume() {
         "Designed a headless WordPress social recommendation application using React and API-driven architecture.",
       tech: "Headless WordPress • React • REST APIs",
       link: "https://www.amigo.app/",
+      image: amigoImg,
     },
     {
       title: "Global Compensation Survey Platform",
@@ -51,6 +62,7 @@ export default function KevinAnguloResume() {
         "Built interactive compensation analytics dashboards with real-time charting and advanced filtering systems.",
       tech: "React • Chart.js • JavaScript • WordPress",
       link: "https://compsurvey.vcplatform.com/",
+      image: compsurveyImg,
     },
   ];
 
@@ -260,7 +272,7 @@ export default function KevinAnguloResume() {
         {/* Projects */}
         <section className="mt-24">
           <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-3xl font-bold">Featured Projects</h3>
+            <h3 className="text-3xl font-bold">Some of My Featured Projects</h3>
             <div className="flex-1 h-px bg-white/10"></div>
           </div>
 
@@ -272,6 +284,16 @@ export default function KevinAnguloResume() {
               >
                 <div className="flex flex-col h-full justify-between">
                   <div>
+                    {project.image && (
+                      <a href={project.link} target="_blank" rel="noreferrer">
+                        <img
+                          src={project.image}
+                          alt={`${project.title} screenshot`}
+                          loading="lazy"
+                          className="w-full aspect-[16/10] object-cover object-top rounded-xl border border-white/10 mb-6"
+                        />
+                      </a>
+                    )}
                     <h4 className="text-2xl font-bold mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                       {project.title}
                     </h4>
