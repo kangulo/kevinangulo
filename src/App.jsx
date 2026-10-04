@@ -72,7 +72,7 @@ export default function KevinAnguloResume() {
 
               <div className="space-y-2">
                 <h2 className="text-2xl lg:text-3xl font-semibold text-slate-200">
-                  Solutions Architect
+                  Senior Solutions Architect
                 </h2>
                 <p className="text-xl text-slate-400 max-w-3xl leading-relaxed">
                   Building scalable cloud-based platforms, AI-powered products,
