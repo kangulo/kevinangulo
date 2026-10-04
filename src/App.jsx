@@ -6,6 +6,7 @@ import amigoImg from "./assets/projects/amigo.jpg";
 import compsurveyImg from "./assets/projects/compsurvey.jpg";
 import wagerImage  from "./assets/projects/wager.jpg";
 import leeandlowImage  from "./assets/projects/leeandlow.png";
+import resumePdf from "./assets/projects/Kevin_Angulo_Resume.pdf";
 
 export default function KevinAnguloResume() {
   const skills = {
@@ -108,7 +109,7 @@ export default function KevinAnguloResume() {
 
             <div className="flex flex-wrap gap-4 pt-4">
               <a
-                href="Resume_Updated_April_2022.pdf"
+                href={resumePdf}
                 target="_blank"
                 className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-6 py-3 rounded-2xl transition-all duration-300"
               >
